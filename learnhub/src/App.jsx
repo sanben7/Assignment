@@ -1,6 +1,9 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './view/components/Navbar/Navbar';
 import MobileNav from './view/components/MobileNav/MobileNav';
+import AdminNav from './view/components/AdminNav/AdminNav'; // חדש
+import AdminMobileNav from './view/components/AdminMobileNav/AdminMobileNav';
+
 
 import LandingPage from './view/pages/LandingPage/LandingPage';
 import Home from './view/pages/Home/Home';
@@ -14,18 +17,37 @@ import Quiz from './view/pages/Quiz/Quiz';
 import Settings from './view/pages/Settings/Settings';
 import Signin from './view/pages/Signin/Signin';
 import Signup from './view/pages/Signup/Signup';
+import AdminCoursesPage from './view/pages/AdminCoursesPage/AdminCoursesPage';
+import AdminCourseEdit from './view/pages/AdminCourseEdit/AdminCourseEdit';
+import AdminLessonPage from './view/pages/AdminLessonPage/AdminLessonPage';
+
 
 
 function App() {
   const location = useLocation();
 
-  const hideNavRoutes = ['/signin', '/signup', '/quiz/id', '/lesson/id', '/quiz/:id', '/lesson/:id'];
+  const adminPaths = ["/dashboard", "/admin/course", "/admin/lesson"];
+  const isAdminRoute = adminPaths.some((path) => location.pathname.startsWith(path));
 
-  const hideNav = hideNavRoutes.includes(location.pathname);
+  const hideNavRoutes = [
+    '/signin',
+    '/signup',
+    '/quiz/id',
+    '/lesson/id',
+    '/quiz/:id',
+    '/lesson/:id',
+    '/landingpage',
+  ];
+
+  const hideNav = hideNavRoutes.includes(location.pathname) || isAdminRoute;
 
   return (
     <>
-      {!hideNav && <Navbar />}
+
+      {isAdminRoute && <AdminNav />}
+      {!hideNav && !isAdminRoute && <Navbar />}
+      {isAdminRoute && <AdminMobileNav />}
+      {!hideNav && !isAdminRoute && <MobileNav />}
 
       <div style={{ paddingBottom: hideNav ? '0' : '80px' }}>
         <Routes>
@@ -41,6 +63,11 @@ function App() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/admin/courses" element={<AdminCoursesPage />} />
+          <Route path="/admin/course/id" element={<AdminCourseEdit />} />
+          <Route path="/admin/lesson/id" element={<AdminLessonPage />} />
+
+
         </Routes>
       </div>
 

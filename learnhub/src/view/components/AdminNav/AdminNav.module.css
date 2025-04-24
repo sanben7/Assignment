@@ -1,0 +1,82 @@
+@import url('../Navbar/Navbar.module.css');
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #f5f3ff;
+    border-bottom: 1px solid #e5e5e5;
+    font-family: 'Poppins', sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logoSection {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.logo {
+    width: 36px;
+    height: 36px;
+}
+
+.brand {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navLinks a {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.navLinks a:hover {
+    color: #8445FE;
+}
+
+.active {
+    color: #8445FE !important;
+}
+
+.avatar {
+    background-color: #e8ddff;
+    color: #8445FE;
+    font-weight: bold;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    margin-left: 1.5rem;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.avatar:hover {
+    background-color: #d7c7ff;
+}
+
+.logoLink {
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
+    }
+}

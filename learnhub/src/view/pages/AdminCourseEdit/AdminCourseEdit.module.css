@@ -1,0 +1,126 @@
+.container {
+    padding: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.actions button {
+    margin-left: 0.5rem;
+}
+
+.preview {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #000;
+}
+
+.save {
+    background: #8445fe;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.delete {
+    background: #ff4b4b;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.section {
+    margin-top: 2rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.analytics {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.analytics div {
+    background: #f6f0ff;
+    padding: 1rem;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.lessonCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.lessonActions button {
+    margin-left: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.remove {
+    background: #ff4b4b;
+    color: white;
+}
+
+.addNew {
+    margin-top: 1rem;
+    width: 100%;
+    background: #f3ecff;
+    border: 2px dashed #ccc;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #000;
+
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .analytics {
+        flex-direction: column;
+    }
+
+    .lessonCard {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .lessonActions {
+        margin-top: 1rem;
+    }
+}

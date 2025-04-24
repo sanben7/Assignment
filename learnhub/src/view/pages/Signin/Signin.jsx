@@ -9,9 +9,14 @@ export default function Signin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // נווט לעמוד הבית
-    navigate("/");
+
+    if (email === "admin@gmail.com" && password === "admin") {
+      navigate("/dashboard");
+    } else {
+      navigate("/");
+    }
   };
+
 
   return (
     <div className={styles.container}>
