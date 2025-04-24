@@ -1,0 +1,181 @@
+.wrapper {
+    padding: 2rem;
+    background-color: #fafafa;
+    min-height: 100vh;
+}
+
+.header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+}
+
+.header p {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.streakCard {
+    background-color: #f5f3ff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.streakText {
+    display: flex;
+    flex-direction: column;
+}
+
+.streakTitle {
+    font-weight: 600;
+    color: #6d28d9;
+}
+
+.streakSub {
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.streakDays {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
+.day {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #e5e5e5;
+    color: #444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+
+.day.active {
+    background-color: #8b5cf6;
+    color: #fff;
+}
+
+.streakCount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #6d28d9;
+    margin-left: 8px;
+}
+
+.sectionTitle {
+    margin: 2rem 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.coursesGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.courseCard {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.category {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 0.4rem;
+}
+
+.courseInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.4rem;
+}
+
+.courseName {
+    font-weight: 600;
+}
+
+.coursePercent {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.progressBar {
+    width: 100%;
+    height: 6px;
+    background-color: #e5e5e5;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    border-radius: 3px;
+}
+
+.learningList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.learningItem {
+    border-radius: 12px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.learningLeft {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.playIcon {
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.learningText {
+    display: flex;
+    flex-direction: column;
+}
+
+.learningTitle {
+    font-weight: 600;
+}
+
+.learningCourse {
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.learningTime {
+    font-size: 0.85rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}

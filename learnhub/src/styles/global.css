@@ -1,0 +1,25 @@
+/* Reset בסיסי */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #222;
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.p-1 {
+    padding: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
