@@ -12,10 +12,15 @@ export default function Lesson() {
           <FaArrowLeft />
         </button>
         <div className={styles.videoBox}>
-          <div className={styles.videoOverlay}>
-            <span className={styles.playButton} onClick={() => alert('Play video')}>▶</span>
-          </div>
+          <video
+            className={styles.videoPlayer}
+            controls
+            src="/videos/lesson_id.mp4" // ודא שהקובץ קיים בתיקיית public/videos
+          >
+            Your browser does not support the video tag.
+          </video>
         </div>
+
       </div>
 
       <div className={styles.lessonInfo}>
@@ -45,7 +50,7 @@ export default function Lesson() {
           <p>The derivative of a function represents the rate at which the function is changing at a given point. Geometrically, it can be interpreted as the slope of the tangent line to the function's graph at that point.</p>
           <p>The integral of a function, on the other hand, represents the accumulation of quantities. It can be interpreted geometrically as the area under the curve of the function.</p>
 
-          <button className={styles.quizButton} onClick={() => navigate('/quiz/3')}>
+          <button className={styles.quizButton} onClick={() => navigate('/quiz/id')}>
             ❓ Test Your Knowledge
           </button>
         </div>

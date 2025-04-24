@@ -1,4 +1,164 @@
+/* Quiz.module.css */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  color: #1e1e1e;
+}
+
+.backBtn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.courseBox {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  margin-bottom: 2rem;
+}
+
+.courseHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.progressBarWrapper {
+  background: #f0f0f0;
+  height: 6px;
+  border-radius: 4px;
+  position: relative;
+  margin: 0.5rem 0 0.5rem;
+  overflow: hidden;
+}
+
+.progressBar {
+  width: 100%;
+  height: 6px;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: #8445fe;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.courseFooter {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.lessonBtn {
+  margin-top: 0.8rem;
+  background-color: #8445fe;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.questionIndex {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
 .question {
-  font-size: 20px;
-  margin: 16px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.answers {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.answerOption {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1rem;
+  background-color: #fff;
+  border-radius: 12px;
+  margin-bottom: 0.6rem;
+  border: 1px solid #e4e4e4;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.answerOption:hover {
+  background-color: #f8f5ff;
+}
+
+.selected {
+  background-color: #f0e9ff;
+  border-color: #8445fe;
+}
+
+.letter {
+  display: inline-block;
+  font-weight: 600;
+  background: #eee;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 26px;
+  font-size: 0.85rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.navBtn,
+.checkBtn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
+
+.navBtn {
+  background: #eee;
+  color: #333;
+}
+
+.checkBtn {
+  background-color: #8445fe;
+  color: white;
+}
+
+.feedback {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  color: #333;
 }

@@ -17,21 +17,21 @@ export default function Home() {
       name: 'Calculus 101',
       progress: 65,
       color: '#8B5CF6',
-      link: '/course/1',
+      link: '/courses/id',
     },
     {
       category: 'Computer Science',
       name: 'Python Programming',
       progress: 30,
       color: '#22C55E',
-      link: '/course/2',
+      link: '/courses/id',
     },
     {
       category: 'Humanities',
       name: 'Art History',
       progress: 15,
       color: '#F97316',
-      link: '/course/3',
+      link: '/courses/id',
     },
   ];
 
@@ -41,21 +41,21 @@ export default function Home() {
       course: 'Calculus 101',
       time: '15 min',
       color: '#EDE9FE',
-      link: '/lesson/1',
+      link: '/lesson/id',
     },
     {
       title: 'Python Data Structures',
       course: 'Python Programming',
       time: '12 min',
       color: '#DCFCE7',
-      link: '/lesson/2',
+      link: '/lesson/id',
     },
     {
       title: 'Renaissance Art Overview',
       course: 'Art History',
       time: '20 min',
       color: '#FEF3C7',
-      link: '/lesson/3',
+      link: '/lesson/id',
     },
   ];
 

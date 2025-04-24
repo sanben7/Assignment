@@ -53,7 +53,7 @@ export default function Courses() {
           <div
             key={i}
             className={styles.courseCard}
-            onClick={() => navigate(`/courses/${course.id}`)}
+            onClick={() => navigate(`/courses/id`)}
           >
             <div className={styles.courseImage} style={{ backgroundColor: course.color }}></div>
             <div className={styles.courseInfo}>

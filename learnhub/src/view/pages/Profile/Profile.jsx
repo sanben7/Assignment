@@ -15,7 +15,7 @@ export default function Profile() {
   const actions = [
     { label: 'Settings', icon: <LuSettings />, link: '/settings' },
     { label: 'Help & Support', icon: <LuExternalLink />, link: '/support' },
-    { label: 'Logout', icon: <LuLogOut />, action: () => navigate('/signin'), danger: true },
+    { label: 'Logout', icon: <LuLogOut />, action: () => navigate('/landingpage'), danger: true },
   ];
 
   return (

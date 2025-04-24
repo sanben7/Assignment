@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './view/components/Navbar/Navbar';
 import MobileNav from './view/components/MobileNav/MobileNav';
 
+import LandingPage from './view/pages/LandingPage/LandingPage';
 import Home from './view/pages/Home/Home';
 import Courses from './view/pages/Courses/Courses';
 import Dashboard from './view/pages/Dashboard/Dashboard';
@@ -18,7 +19,7 @@ import Signup from './view/pages/Signup/Signup';
 function App() {
   const location = useLocation();
 
-  const hideNavRoutes = ['/signin', '/signup'];
+  const hideNavRoutes = ['/signin', '/signup', '/quiz/id', '/lesson/id', '/quiz/:id', '/lesson/:id'];
 
   const hideNav = hideNavRoutes.includes(location.pathname);
 
@@ -28,6 +29,7 @@ function App() {
 
       <div style={{ paddingBottom: hideNav ? '0' : '80px' }}>
         <Routes>
+          <Route path="/landingpage" element={<LandingPage />} />
           <Route path="/" element={<Home />} />
           <Route path="/courses" element={<Courses />} />
           <Route path="/courses/id" element={<CourseDetails />} />

@@ -15,6 +15,10 @@ export default function Signin() {
 
   return (
     <div className={styles.container}>
+      <button onClick={() => navigate("/landingpage")} className={styles.backBtn}>
+        ← Back to Home
+      </button>
+
       <img src="/hubi-icon.png" alt="LearnHub Logo" className={styles.logo} />
       <h1 className={styles.title}>LearnHub</h1>
       <p className={styles.subtitle}>Master your courses with interactive learning</p>

@@ -49,7 +49,7 @@ export default function CourseDetails() {
         </div>
         <button
           className={styles.resumeBtn}
-          onClick={() => navigate(`/lesson/${completedCount + 1}`)}
+          onClick={() => navigate(`/lesson/id`)}
         >
           Resume Course →
         </button>
@@ -61,7 +61,7 @@ export default function CourseDetails() {
           <div
             key={index}
             className={styles.lessonItem}
-            onClick={() => navigate(`/lesson/${index + 1}`)}
+            onClick={() => navigate(`/lesson/id`)}
           >
             <div className={styles.lessonLeft}>
               {lesson.completed ? (
