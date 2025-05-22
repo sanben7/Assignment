@@ -1,9 +1,11 @@
 import styles from './Profile.module.css';
 import { LuBookOpen, LuAward, LuClock4, LuLogOut, LuSettings, LuExternalLink } from 'react-icons/lu';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../context/AuthContext';
 
 export default function Profile() {
   const navigate = useNavigate();
+  const { currentUser, userData, logout } = useAuth();
 
   const stats = [
     { label: 'Courses In Progress', value: 8, icon: <LuBookOpen />, color: '#C4B5FD' },
@@ -15,17 +17,30 @@ export default function Profile() {
   const actions = [
     { label: 'Settings', icon: <LuSettings />, link: '/settings' },
     { label: 'Help & Support', icon: <LuExternalLink />, link: '/support' },
-    { label: 'Logout', icon: <LuLogOut />, action: () => navigate('/landingpage'), danger: true },
+    { label: 'Logout', icon: <LuLogOut />, action: logout, danger: true },
   ];
+
+  const getInitials = (name) => {
+    if (!name) return '?';
+    return name
+      .split(' ')
+      .map(word => word[0])
+      .join('')
+      .toUpperCase();
+  };
 
   return (
     <div className={styles.profileWrapper}>
       <h2 className={styles.title}>Profile</h2>
 
       <div className={styles.userInfo}>
-        <div className={styles.avatar}>JD</div>
-        <div className={styles.name}>Jamie Doe</div>
-        <div className={styles.email}>jamie.doe@example.com</div>
+        <div className={styles.avatar}>
+          {getInitials(userData?.displayName || currentUser?.displayName)}
+        </div>
+        <div className={styles.name}>
+          {userData?.displayName || currentUser?.displayName || 'User'}
+        </div>
+        <div className={styles.email}>{currentUser?.email}</div>
       </div>
 
       <div className={styles.statsGrid}>

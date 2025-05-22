@@ -1,22 +1,87 @@
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
 import styles from "./Signin.module.css";
+import {
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  GoogleAuthProvider,
+  setPersistence,
+  browserLocalPersistence,
+} from "firebase/auth";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { auth, db } from "../../../firebase";
 
 export default function Signin() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null);
+    setLoading(true);
 
-    if (email === "admin@gmail.com" && password === "admin") {
-      navigate("/dashboard");
-    } else {
-      navigate("/");
+    try {
+      await setPersistence(auth, browserLocalPersistence);
+
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      const userDocRef = doc(db, "users", user.uid);
+      const userDocSnap = await getDoc(userDocRef);
+
+      if (userDocSnap.exists()) {
+        const { role } = userDocSnap.data();
+        setLoading(false);
+        navigate(role === "admin" ? "/dashboard" : "/");
+      } else {
+        setLoading(false);
+        setError("User data not found.");
+      }
+    } catch (err) {
+      console.error("Login error:", err.message);
+      setLoading(false);
+      setError("Invalid email or password.");
     }
   };
 
+  const handleGoogleLogin = async () => {
+    setError(null);
+    setLoading(true);
+    const provider = new GoogleAuthProvider();
+
+    try {
+      await setPersistence(auth, browserLocalPersistence);
+
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+
+      const userDocRef = doc(db, "users", user.uid);
+      const userSnap = await getDoc(userDocRef);
+
+      // אם המשתמש לא קיים במסד נתונים - צור אותו
+      if (!userSnap.exists()) {
+        await setDoc(userDocRef, {
+          fullName: user.displayName,
+          email: user.email,
+          role: "user",
+          createdAt: new Date(),
+        });
+        navigate("/");
+      } else {
+        const { role } = userSnap.data();
+        navigate(role === "admin" ? "/dashboard" : "/");
+      }
+
+      setLoading(false);
+    } catch (err) {
+      console.error("Google login error:", err.message);
+      setLoading(false);
+      setError("Google sign-in failed.");
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -51,7 +116,17 @@ export default function Signin() {
             required
           />
 
-          <button type="submit">Sign In</button>
+          {error && <p style={{ color: "red" }}>{error}</p>}
+          {loading ? (
+            <p>Signing in...</p>
+          ) : (
+            <>
+              <button type="submit">Sign In</button>
+              <button type="button" onClick={handleGoogleLogin} className={styles.googleBtn}>
+                Sign in with Google
+              </button>
+            </>
+          )}
         </form>
 
         <p className={styles.switchText}>

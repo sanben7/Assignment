@@ -10,7 +10,7 @@
     top: 0;
     z-index: 1000;
     background-color: #f5f3ff;
-    /* חשוב לתת רקע כדי שלא יבלע לתוך התוכן */
+    /* חשוב לתת רקע כדי שלא יבלע לתוכן */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     /* אופציונלי */
 }
@@ -24,6 +24,14 @@
 .logo {
     width: 36px;
     height: 36px;
+    background-color: #8445FE;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .brand {
